@@ -2,22 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_recipe_app_course/ui/color_styles.dart';
 import 'package:flutter_recipe_app_course/ui/text_styles.dart';
 
-class BigButton extends StatefulWidget {
+class SmallButton extends StatefulWidget {
   final String text;
   final void Function() onPressed;
 
-  const BigButton(
-    // text는 필수
+  const SmallButton(
     this.text, {
     super.key,
     required this.onPressed,
   });
 
   @override
-  State<BigButton> createState() => _BigButtonState();
+  State<SmallButton> createState() => _SmallButtonState();
 }
 
-class _BigButtonState extends State<BigButton> {
+class _SmallButtonState extends State<SmallButton> {
   bool isPressed = false;
 
   @override
@@ -40,7 +39,7 @@ class _BigButtonState extends State<BigButton> {
         });
       },
       child: Container(
-        height: 60,
+        height: 37,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: isPressed ? ColorStyles.gray4 : ColorStyles.primary100,
@@ -48,23 +47,10 @@ class _BigButtonState extends State<BigButton> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
-              width: 114,
-              child: Text(
-                widget.text,
-                style: TextStyles.normalTextBold.copyWith(
-                  color: Colors.white,
-                ),
-              ),
+            Text(
+              widget.text,
+              style: TextStyles.normalTextBold.copyWith(color: Colors.white),
             ),
-            const SizedBox(
-              width: 11,
-            ),
-            const Icon(
-              Icons.arrow_forward,
-              size: 20,
-              color: Colors.white,
-            )
           ],
         ),
       ),
