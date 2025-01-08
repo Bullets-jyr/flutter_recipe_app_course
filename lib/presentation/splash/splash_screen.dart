@@ -3,6 +3,7 @@ import 'package:flutter_recipe_app_course/core/presentation/components/medium_bu
 import 'package:flutter_recipe_app_course/ui/text_styles.dart';
 
 class SplashScreen extends StatelessWidget {
+  // void Function
   final VoidCallback onTapStartCooking;
 
   const SplashScreen({
@@ -16,7 +17,7 @@ class SplashScreen extends StatelessWidget {
       body: Stack(
         children: [
           Image.asset(
-            'assets/image/splash_image.png',
+            'assets/images/splash_image.png',
             width: double.infinity,
             height: double.infinity,
             fit: BoxFit.cover,
@@ -26,7 +27,7 @@ class SplashScreen extends StatelessWidget {
               children: [
                 const SizedBox(height: 104),
                 Image.asset(
-                  'assets/image/crown.png',
+                  'assets/images/crown.png',
                   width: 79,
                   height: 79,
                 ),
