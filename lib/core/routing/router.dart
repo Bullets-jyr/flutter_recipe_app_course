@@ -12,8 +12,7 @@ import 'package:go_router/go_router.dart';
 
 // GoRouter configuration
 final router = GoRouter(
-  // initialLocation: RoutePaths.splash,
-  initialLocation: RoutePaths.signUp,
+  initialLocation: RoutePaths.splash,
   routes: [
     GoRoute(
       path: RoutePaths.signUp,
@@ -28,13 +27,13 @@ final router = GoRouter(
         onTapStartCooking: () => context.go(RoutePaths.signIn),
       ),
     ),
-    // GoRoute(
-    //   path: RoutePaths.signIn,
-    //   builder: (context, state) => SignInScreen(
-    //     onTapSignUp: () => context.go(RoutePaths.signUp),
-    //     onTapSignIn: () => context.go(RoutePaths.savedRecipes),
-    //   ),
-    // ),
+    GoRoute(
+      path: RoutePaths.signIn,
+      builder: (context, state) => SignInScreen(
+        onTapSignUp: () => context.go(RoutePaths.signUp),
+        onTapSignIn: () => context.go(RoutePaths.savedRecipes),
+      ),
+    ),
     GoRoute(
       path: RoutePaths.savedRecipes,
       builder: (context, state) => FutureBuilder<List<Recipe>>(
