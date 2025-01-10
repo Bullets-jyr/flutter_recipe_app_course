@@ -6,20 +6,21 @@ import 'package:flutter_recipe_app_course/domain/model/recipe.dart';
 import 'package:flutter_recipe_app_course/domain/use_case/get_saved_recipes_use_case.dart';
 import 'package:flutter_recipe_app_course/presentation/saved_recipes/saved_recipes_screen.dart';
 import 'package:flutter_recipe_app_course/presentation/sign_in/sign_in_screen.dart';
-// import 'package:flutter_recipe_app_course/presentation/sign_up/sign_up_screen.dart';
+import 'package:flutter_recipe_app_course/presentation/sign_up/sign_up_screen.dart';
 import 'package:flutter_recipe_app_course/presentation/splash/splash_screen.dart';
 import 'package:go_router/go_router.dart';
 
 // GoRouter configuration
 final router = GoRouter(
-  initialLocation: RoutePaths.splash,
+  // initialLocation: RoutePaths.splash,
+  initialLocation: RoutePaths.signUp,
   routes: [
-    // GoRoute(
-    //   path: RoutePaths.signUp,
-    //   builder: (context, state) => SignUpScreen(
-    //     onTapSignIn: () => context.go(RoutePaths.signIn),
-    //   ),
-    // ),
+    GoRoute(
+      path: RoutePaths.signUp,
+      builder: (context, state) => SignUpScreen(
+        onTapSignIn: () => context.go(RoutePaths.signIn),
+      ),
+    ),
     GoRoute(
       path: RoutePaths.splash,
       builder: (context, state) => SplashScreen(
