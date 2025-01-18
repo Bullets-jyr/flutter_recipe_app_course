@@ -4,6 +4,7 @@ import 'package:flutter_recipe_app_course/data/repository/mock_bookmark_reposito
 import 'package:flutter_recipe_app_course/data/repository/mock_recipe_repository_impl.dart';
 import 'package:flutter_recipe_app_course/domain/model/recipe.dart';
 import 'package:flutter_recipe_app_course/domain/use_case/get_saved_recipes_use_case.dart';
+import 'package:flutter_recipe_app_course/main.dart';
 import 'package:flutter_recipe_app_course/presentation/home/home_screen.dart';
 import 'package:flutter_recipe_app_course/presentation/main/main_screen.dart';
 import 'package:flutter_recipe_app_course/presentation/notifications/notifications_screen.dart';
@@ -18,7 +19,12 @@ import 'package:go_router/go_router.dart';
 // GoRouter configuration
 final router = GoRouter(
   initialLocation: RoutePaths.splash,
+  // initialLocation: RoutePaths.test,
   routes: [
+    GoRoute(
+      path: RoutePaths.test,
+      builder: (context, state) => const MyHomePage(),
+    ),
     GoRoute(
       path: RoutePaths.signUp,
       builder: (context, state) => SignUpScreen(
@@ -80,7 +86,9 @@ final router = GoRouter(
           routes: [
             GoRoute(
               path: RoutePaths.home,
-              builder: (context, state) => const HomeScreen(),
+              builder: (context, state) => const HomeScreen(
+                name: 'Jega',
+              ),
             ),
           ],
         ),
