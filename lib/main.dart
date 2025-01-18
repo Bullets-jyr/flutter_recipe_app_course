@@ -12,7 +12,7 @@ import 'package:flutter_recipe_app_course/data/repository/mock_bookmark_reposito
 import 'package:flutter_recipe_app_course/data/repository/mock_recipe_repository_impl.dart';
 import 'package:flutter_recipe_app_course/domain/model/recipe.dart';
 import 'package:flutter_recipe_app_course/domain/use_case/get_saved_recipes_use_case.dart';
-import 'package:flutter_recipe_app_course/presentation/saved_recipes/saved_recipes_screen.dart';
+import 'package:flutter_recipe_app_course/presentation/saved_recipes/screen/saved_recipes_screen.dart';
 import 'package:flutter_recipe_app_course/presentation/sign_in/sign_in_screen.dart';
 import 'package:flutter_recipe_app_course/ui/text_styles.dart';
 
