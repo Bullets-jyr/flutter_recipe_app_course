@@ -6,12 +6,14 @@ class SearchInputField extends StatelessWidget {
   final String placeHolder;
   final TextEditingController? controller;
   final bool isReadOnly;
+  final void Function(String query)? onChanged;
 
   const SearchInputField({
     super.key,
     required this.placeHolder,
     this.controller,
     this.isReadOnly = false,
+    this.onChanged,
   });
 
   @override
@@ -22,6 +24,7 @@ class SearchInputField extends StatelessWidget {
         // true: 키보드가 동작하지 않도록 할 수가 있습니다.
         readOnly: isReadOnly,
         controller: controller,
+        onChanged: onChanged,
         decoration: InputDecoration(
           prefixIcon: const Icon(
             Icons.search,
