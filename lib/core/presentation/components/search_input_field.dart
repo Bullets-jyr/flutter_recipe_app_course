@@ -5,11 +5,13 @@ import 'package:flutter_recipe_app_course/ui/text_styles.dart';
 class SearchInputField extends StatelessWidget {
   final String placeHolder;
   final TextEditingController? controller;
+  final bool isReadOnly;
 
   const SearchInputField({
     super.key,
     required this.placeHolder,
     this.controller,
+    this.isReadOnly = false,
   });
 
   @override
@@ -17,6 +19,8 @@ class SearchInputField extends StatelessWidget {
     return SizedBox(
       height: 40,
       child: TextField(
+        // true: 키보드가 동작하지 않도록 할 수가 있습니다.
+        readOnly: isReadOnly,
         controller: controller,
         decoration: InputDecoration(
           prefixIcon: const Icon(

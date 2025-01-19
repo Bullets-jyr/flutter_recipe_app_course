@@ -5,10 +5,12 @@ import 'package:flutter_recipe_app_course/ui/text_styles.dart';
 
 class HomeScreen extends StatelessWidget {
   final String name;
+  final void Function() onTapSearchField;
 
   const HomeScreen({
     super.key,
     required this.name,
+    required this.onTapSearchField,
   });
 
   @override
@@ -52,9 +54,27 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: 30),
             Row(
               children: [
-                const Expanded(
-                  child: SearchInputField(
-                    placeHolder: 'Search Recipe',
+                Expanded(
+                  child: GestureDetector(
+                    // 여기서 하나 더 추가를 하는데 GestureDetector에
+                    // HitTestBehavior.opaque를 추가를 하고 클릭을 해보면
+                    // 이제 탭이 먹는거 확인할 수가 있구요
+                    // 이 속성은 탭이 일어나는 영역에 대해서 조금 확실하게 해주는
+                    // 그런 역할을 해주는데 어떤 코드 조합에 따라서 이런 옵션을 줬을 때
+                    // 제대로 동작을 하는 케이스가 있습니다.
+                    // 지금 이런 케이스가 그런 케이스구요
+                    behavior: HitTestBehavior.opaque,
+                    onTap: onTapSearchField,
+                    // 자 이렇게 탭을 찍어도 확인이 안되는 이유는 안쪽에 있는 텍스트 필드가
+                    // 이벤트를 소비를 하기 때문에 그렇거든요
+                    // 그거를 무시하는 방법은 얘를 감쌉니다.
+                    // IgnorePointer라는 걸로 감싸 주시고요
+                    child: const IgnorePointer(
+                      child: SearchInputField(
+                        placeHolder: 'Search Recipe',
+                        isReadOnly: true,
+                      ),
+                    ),
                   ),
                 ),
                 const SizedBox(width: 20),

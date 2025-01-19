@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_recipe_app_course/data/data_source/remote/remote_recipe_data_source_impl.dart';
 import 'package:flutter_recipe_app_course/data/repository/mock_bookmark_repository_impl.dart';
 import 'package:flutter_recipe_app_course/data/repository/mock_recipe_repository_impl.dart';
 import 'package:flutter_recipe_app_course/domain/use_case/get_saved_recipes_use_case.dart';
@@ -7,7 +8,10 @@ import 'package:flutter_recipe_app_course/presentation/saved_recipes/screen/save
 
 // 싱글톤
 final _getSavedRecipesUseCase = GetSavedRecipesUseCase(
-  recipeRepository: MockRecipeRepositoryImpl(),
+  // recipeRepository: MockRecipeRepositoryImpl(),
+  recipeRepository: MockRecipeRepositoryImpl(
+    recipeDataSource: RemoteRecipeDataSourceImpl(),
+  ),
   bookmarkRepository: MockBookmarkRepositoryImpl(),
 );
 

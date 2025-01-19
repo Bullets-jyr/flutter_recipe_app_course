@@ -1,16 +1,12 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_recipe_app_course/core/routing/route_paths.dart';
-import 'package:flutter_recipe_app_course/data/repository/mock_bookmark_repository_impl.dart';
-import 'package:flutter_recipe_app_course/data/repository/mock_recipe_repository_impl.dart';
-import 'package:flutter_recipe_app_course/domain/model/recipe.dart';
-import 'package:flutter_recipe_app_course/domain/use_case/get_saved_recipes_use_case.dart';
 import 'package:flutter_recipe_app_course/main.dart';
-import 'package:flutter_recipe_app_course/presentation/home/home_screen.dart';
+import 'package:flutter_recipe_app_course/presentation/home/screen/home_root.dart';
 import 'package:flutter_recipe_app_course/presentation/main/main_screen.dart';
 import 'package:flutter_recipe_app_course/presentation/notifications/notifications_screen.dart';
 import 'package:flutter_recipe_app_course/presentation/profile/profile_screen.dart';
 import 'package:flutter_recipe_app_course/presentation/saved_recipes/screen/saved_recipes_root.dart';
-import 'package:flutter_recipe_app_course/presentation/saved_recipes/screen/saved_recipes_screen.dart';
+import 'package:flutter_recipe_app_course/presentation/search/screen/search_root.dart';
+import 'package:flutter_recipe_app_course/presentation/search/screen/search_screen.dart';
 import 'package:flutter_recipe_app_course/presentation/sign_in/sign_in_screen.dart';
 import 'package:flutter_recipe_app_course/presentation/sign_up/sign_up_screen.dart';
 import 'package:flutter_recipe_app_course/presentation/splash/splash_screen.dart';
@@ -68,6 +64,10 @@ final router = GoRouter(
     //   path: RoutePaths.savedRecipes,
     //   builder: (context, state) => SavedRecipesRoot(),
     // ),
+    GoRoute(
+      path: RoutePaths.search,
+      builder: (context, state) => const SearchRoot(),
+    ),
     StatefulShellRoute.indexedStack(
       builder: (context, state, navigationShell) {
         return MainScreen(
@@ -86,9 +86,18 @@ final router = GoRouter(
           routes: [
             GoRoute(
               path: RoutePaths.home,
-              builder: (context, state) => const HomeScreen(
-                name: 'Jega',
-              ),
+              builder: (context, state) => const HomeRoot(),
+              // routes: [
+              //   // 자 근데 지금 go_router를 사용하시면서 이런 식으로 구현을 하게 되면
+              //   // 이 내비게이터 푸시를 했을 때 이 하단에 내비게이션 바가 남아있는 이슈가 있습니다.
+              //   // 그래서 일반적으로는 이런 식으로 구성을 하는게 맞는데 지금 화면을 푸시를 하면서
+              //   // 이 하단 영역을 남기고 싶으면 이렇게 가셔도 되고 남기면 안 된다
+              //   // 그러면 이 안쪽에 있는 GoRoute를 바깥으로 다시 빼내야 돼요
+              //   GoRoute(
+              //     path: 'Search',
+              //     builder: (context, state) => const SearchScreen(),
+              //   ),
+              // ],
             ),
           ],
         ),
