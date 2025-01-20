@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_recipe_app_course/core/di/di_setup.dart';
 import 'package:flutter_recipe_app_course/core/presentation/components/big_button.dart';
 import 'package:flutter_recipe_app_course/core/presentation/components/filter_button.dart';
 import 'package:flutter_recipe_app_course/core/presentation/components/input_field.dart';
@@ -18,6 +19,7 @@ import 'package:flutter_recipe_app_course/presentation/sign_in/sign_in_screen.da
 import 'package:flutter_recipe_app_course/ui/text_styles.dart';
 
 void main() {
+  diSetup();
   runApp(const MyApp());
 }
 
