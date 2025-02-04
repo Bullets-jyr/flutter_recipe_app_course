@@ -20,6 +20,8 @@ mixin _$SearchState {
   bool get isLoading => throw _privateConstructorUsedError;
   String get searchTitle => throw _privateConstructorUsedError;
   String get resultsCount => throw _privateConstructorUsedError;
+  FilterState get filterState => throw _privateConstructorUsedError;
+  String get query => throw _privateConstructorUsedError;
 
   /// Create a copy of SearchState
   /// with the given fields replaced by the non-null parameter values.
@@ -38,7 +40,9 @@ abstract class $SearchStateCopyWith<$Res> {
       {List<Recipe> recipes,
       bool isLoading,
       String searchTitle,
-      String resultsCount});
+      String resultsCount,
+      FilterState filterState,
+      String query});
 }
 
 /// @nodoc
@@ -60,6 +64,8 @@ class _$SearchStateCopyWithImpl<$Res, $Val extends SearchState>
     Object? isLoading = null,
     Object? searchTitle = null,
     Object? resultsCount = null,
+    Object? filterState = null,
+    Object? query = null,
   }) {
     return _then(_value.copyWith(
       recipes: null == recipes
@@ -78,6 +84,14 @@ class _$SearchStateCopyWithImpl<$Res, $Val extends SearchState>
           ? _value.resultsCount
           : resultsCount // ignore: cast_nullable_to_non_nullable
               as String,
+      filterState: null == filterState
+          ? _value.filterState
+          : filterState // ignore: cast_nullable_to_non_nullable
+              as FilterState,
+      query: null == query
+          ? _value.query
+          : query // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -94,7 +108,9 @@ abstract class _$$HomeStateImplCopyWith<$Res>
       {List<Recipe> recipes,
       bool isLoading,
       String searchTitle,
-      String resultsCount});
+      String resultsCount,
+      FilterState filterState,
+      String query});
 }
 
 /// @nodoc
@@ -114,6 +130,8 @@ class __$$HomeStateImplCopyWithImpl<$Res>
     Object? isLoading = null,
     Object? searchTitle = null,
     Object? resultsCount = null,
+    Object? filterState = null,
+    Object? query = null,
   }) {
     return _then(_$HomeStateImpl(
       recipes: null == recipes
@@ -132,6 +150,14 @@ class __$$HomeStateImplCopyWithImpl<$Res>
           ? _value.resultsCount
           : resultsCount // ignore: cast_nullable_to_non_nullable
               as String,
+      filterState: null == filterState
+          ? _value.filterState
+          : filterState // ignore: cast_nullable_to_non_nullable
+              as FilterState,
+      query: null == query
+          ? _value.query
+          : query // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -143,7 +169,10 @@ class _$HomeStateImpl implements _HomeState {
       {final List<Recipe> recipes = const [],
       this.isLoading = false,
       this.searchTitle = 'Recent Search',
-      this.resultsCount = ''})
+      this.resultsCount = '',
+      this.filterState =
+          const FilterState(time: 'All', rate: 1, category: 'All'),
+      this.query = ''})
       : _recipes = recipes;
 
   final List<Recipe> _recipes;
@@ -164,10 +193,16 @@ class _$HomeStateImpl implements _HomeState {
   @override
   @JsonKey()
   final String resultsCount;
+  @override
+  @JsonKey()
+  final FilterState filterState;
+  @override
+  @JsonKey()
+  final String query;
 
   @override
   String toString() {
-    return 'SearchState(recipes: $recipes, isLoading: $isLoading, searchTitle: $searchTitle, resultsCount: $resultsCount)';
+    return 'SearchState(recipes: $recipes, isLoading: $isLoading, searchTitle: $searchTitle, resultsCount: $resultsCount, filterState: $filterState, query: $query)';
   }
 
   @override
@@ -181,7 +216,10 @@ class _$HomeStateImpl implements _HomeState {
             (identical(other.searchTitle, searchTitle) ||
                 other.searchTitle == searchTitle) &&
             (identical(other.resultsCount, resultsCount) ||
-                other.resultsCount == resultsCount));
+                other.resultsCount == resultsCount) &&
+            (identical(other.filterState, filterState) ||
+                other.filterState == filterState) &&
+            (identical(other.query, query) || other.query == query));
   }
 
   @override
@@ -190,7 +228,9 @@ class _$HomeStateImpl implements _HomeState {
       const DeepCollectionEquality().hash(_recipes),
       isLoading,
       searchTitle,
-      resultsCount);
+      resultsCount,
+      filterState,
+      query);
 
   /// Create a copy of SearchState
   /// with the given fields replaced by the non-null parameter values.
@@ -206,7 +246,9 @@ abstract class _HomeState implements SearchState {
       {final List<Recipe> recipes,
       final bool isLoading,
       final String searchTitle,
-      final String resultsCount}) = _$HomeStateImpl;
+      final String resultsCount,
+      final FilterState filterState,
+      final String query}) = _$HomeStateImpl;
 
   @override
   List<Recipe> get recipes;
@@ -216,6 +258,10 @@ abstract class _HomeState implements SearchState {
   String get searchTitle;
   @override
   String get resultsCount;
+  @override
+  FilterState get filterState;
+  @override
+  String get query;
 
   /// Create a copy of SearchState
   /// with the given fields replaced by the non-null parameter values.
