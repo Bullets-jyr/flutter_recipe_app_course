@@ -1,5 +1,6 @@
 import 'package:flutter_recipe_app_course/data/data_source/local/default_local_storage.dart';
 import 'package:flutter_recipe_app_course/data/data_source/remote/remote_recipe_data_source_impl.dart';
+import 'package:flutter_recipe_app_course/data/repository/error_mock_recipe_repository_impl.dart';
 import 'package:flutter_recipe_app_course/data/repository/mock_bookmark_repository_impl.dart';
 import 'package:flutter_recipe_app_course/data/repository/mock_recent_search_recipe_repository_impl.dart';
 import 'package:flutter_recipe_app_course/data/repository/mock_recipe_repository_impl.dart';
@@ -49,6 +50,12 @@ void diSetup() {
       recipeDataSource: getIt(),
     ),
   );
+  // Error Test
+  // getIt.registerSingleton<RecipeRepository>(
+  //   ErrorMockRecipeRepositoryImpl(
+  //     recipeDataSource: getIt(),
+  //   ),
+  // );
   getIt.registerSingleton<BookmarkRepository>(MockBookmarkRepositoryImpl());
   /// 2) SearchRoot
   getIt.registerSingleton<RecentSearchRecipeRepository>(
