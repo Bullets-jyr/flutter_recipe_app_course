@@ -11,6 +11,7 @@ import 'package:flutter_recipe_app_course/domain/repository/recent_search_recipe
 import 'package:flutter_recipe_app_course/domain/repository/recipe_repository.dart';
 import 'package:flutter_recipe_app_course/domain/use_case/get_categories_use_case.dart';
 import 'package:flutter_recipe_app_course/domain/use_case/get_dishes_by_category_use_case.dart';
+import 'package:flutter_recipe_app_course/domain/use_case/get_new_recipes_use_case.dart';
 import 'package:flutter_recipe_app_course/domain/use_case/get_saved_recipes_use_case.dart';
 import 'package:flutter_recipe_app_course/domain/use_case/search_recipes_use_case.dart';
 import 'package:flutter_recipe_app_course/presentation/home/home_view_model.dart';
@@ -40,6 +41,7 @@ void diSetup() {
   /// data source
   /// 1) SavedRecipesRoot
   getIt.registerSingleton<RecipeDataSource>(RemoteRecipeDataSourceImpl());
+
   /// 2) SearchRoot
   getIt.registerSingleton<LocalStorage>(DefaultLocalStorage());
 
@@ -57,6 +59,7 @@ void diSetup() {
   //   ),
   // );
   getIt.registerSingleton<BookmarkRepository>(MockBookmarkRepositoryImpl());
+
   /// 2) SearchRoot
   getIt.registerSingleton<RecentSearchRecipeRepository>(
     MockRecentSearchRecipeRepositoryImpl(
@@ -72,6 +75,7 @@ void diSetup() {
       bookmarkRepository: getIt(),
     ),
   );
+
   /// 2) SearchRoot
   getIt.registerSingleton(
     SearchRecipesUseCase(
@@ -89,25 +93,32 @@ void diSetup() {
       recipeRepository: getIt(),
     ),
   );
+  getIt.registerSingleton(
+    GetNewRecipesUseCase(
+      recipeRepository: getIt(),
+    ),
+  );
 
   /// ViewModel () =>
   /// 1) SavedRecipesRoot
   getIt.registerFactory<SavedRecipesViewModel>(
-        () => SavedRecipesViewModel(
+    () => SavedRecipesViewModel(
       getSavedRecipesUseCase: getIt(),
     ),
   );
+
   /// 2) SearchRoot
   getIt.registerFactory<SearchViewModel>(
-        () => SearchViewModel(
+    () => SearchViewModel(
       recentSearchRecipeRepository: getIt(),
       searchRecipesUseCase: getIt(),
     ),
   );
   getIt.registerFactory<HomeViewModel>(
-        () => HomeViewModel(
+    () => HomeViewModel(
       getCategoriesUseCase: getIt(),
       getDishesByCategoryUseCase: getIt(),
+      getNewRecipesUseCase: getIt(),
     ),
   );
 }
