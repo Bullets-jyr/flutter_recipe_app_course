@@ -20,6 +20,7 @@ mixin _$HomeState {
   String get selectedCategory => throw _privateConstructorUsedError;
   List<Recipe> get dishes => throw _privateConstructorUsedError;
   List<Recipe> get newRecipes => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
@@ -37,7 +38,8 @@ abstract class $HomeStateCopyWith<$Res> {
       {List<String> categories,
       String selectedCategory,
       List<Recipe> dishes,
-      List<Recipe> newRecipes});
+      List<Recipe> newRecipes,
+      String name});
 }
 
 /// @nodoc
@@ -59,6 +61,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? selectedCategory = null,
     Object? dishes = null,
     Object? newRecipes = null,
+    Object? name = null,
   }) {
     return _then(_value.copyWith(
       categories: null == categories
@@ -77,6 +80,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.newRecipes
           : newRecipes // ignore: cast_nullable_to_non_nullable
               as List<Recipe>,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -93,7 +100,8 @@ abstract class _$$HomeStateImplCopyWith<$Res>
       {List<String> categories,
       String selectedCategory,
       List<Recipe> dishes,
-      List<Recipe> newRecipes});
+      List<Recipe> newRecipes,
+      String name});
 }
 
 /// @nodoc
@@ -113,6 +121,7 @@ class __$$HomeStateImplCopyWithImpl<$Res>
     Object? selectedCategory = null,
     Object? dishes = null,
     Object? newRecipes = null,
+    Object? name = null,
   }) {
     return _then(_$HomeStateImpl(
       categories: null == categories
@@ -131,6 +140,10 @@ class __$$HomeStateImplCopyWithImpl<$Res>
           ? _value._newRecipes
           : newRecipes // ignore: cast_nullable_to_non_nullable
               as List<Recipe>,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -142,7 +155,8 @@ class _$HomeStateImpl implements _HomeState {
       {final List<String> categories = const [],
       this.selectedCategory = 'All',
       final List<Recipe> dishes = const [],
-      final List<Recipe> newRecipes = const []})
+      final List<Recipe> newRecipes = const [],
+      this.name = ''})
       : _categories = categories,
         _dishes = dishes,
         _newRecipes = newRecipes;
@@ -178,8 +192,12 @@ class _$HomeStateImpl implements _HomeState {
   }
 
   @override
+  @JsonKey()
+  final String name;
+
+  @override
   String toString() {
-    return 'HomeState(categories: $categories, selectedCategory: $selectedCategory, dishes: $dishes, newRecipes: $newRecipes)';
+    return 'HomeState(categories: $categories, selectedCategory: $selectedCategory, dishes: $dishes, newRecipes: $newRecipes, name: $name)';
   }
 
   @override
@@ -193,7 +211,8 @@ class _$HomeStateImpl implements _HomeState {
                 other.selectedCategory == selectedCategory) &&
             const DeepCollectionEquality().equals(other._dishes, _dishes) &&
             const DeepCollectionEquality()
-                .equals(other._newRecipes, _newRecipes));
+                .equals(other._newRecipes, _newRecipes) &&
+            (identical(other.name, name) || other.name == name));
   }
 
   @override
@@ -202,7 +221,8 @@ class _$HomeStateImpl implements _HomeState {
       const DeepCollectionEquality().hash(_categories),
       selectedCategory,
       const DeepCollectionEquality().hash(_dishes),
-      const DeepCollectionEquality().hash(_newRecipes));
+      const DeepCollectionEquality().hash(_newRecipes),
+      name);
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
@@ -218,7 +238,8 @@ abstract class _HomeState implements HomeState {
       {final List<String> categories,
       final String selectedCategory,
       final List<Recipe> dishes,
-      final List<Recipe> newRecipes}) = _$HomeStateImpl;
+      final List<Recipe> newRecipes,
+      final String name}) = _$HomeStateImpl;
 
   @override
   List<String> get categories;
@@ -228,6 +249,8 @@ abstract class _HomeState implements HomeState {
   List<Recipe> get dishes;
   @override
   List<Recipe> get newRecipes;
+  @override
+  String get name;
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.

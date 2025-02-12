@@ -3,22 +3,25 @@ import 'package:flutter_recipe_app_course/core/presentation/components/dish_card
 import 'package:flutter_recipe_app_course/core/presentation/components/new_recipe_card.dart';
 import 'package:flutter_recipe_app_course/core/presentation/components/recipe_category_selector.dart';
 import 'package:flutter_recipe_app_course/core/presentation/components/search_input_field.dart';
+import 'package:flutter_recipe_app_course/presentation/home/home_action.dart';
 import 'package:flutter_recipe_app_course/presentation/home/home_state.dart';
 import 'package:flutter_recipe_app_course/ui/color_styles.dart';
 import 'package:flutter_recipe_app_course/ui/text_styles.dart';
 
 class HomeScreen extends StatelessWidget {
-  final String name;
-  final void Function() onTapSearchField;
-  final void Function(String category) onSelectCategory;
+  // final String name;
+  // final void Function() onTapSearchField;
+  // final void Function(String category) onSelectCategory;
   final HomeState state;
+  final void Function(HomeAction action) onAction;
 
   const HomeScreen({
     super.key,
-    required this.name,
-    required this.onTapSearchField,
+    // required this.name,
+    // required this.onTapSearchField,
+    // required this.onSelectCategory,
     required this.state,
-    required this.onSelectCategory,
+    required this.onAction,
   });
 
   @override
@@ -39,7 +42,8 @@ class HomeScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Hello $name',
+                            // 'Hello $name',
+                            'Hello ${state.name}',
                             style: TextStyles.largeTextBold,
                           ),
                           const SizedBox(height: 5),
@@ -76,7 +80,8 @@ class HomeScreen extends StatelessWidget {
                           // 제대로 동작을 하는 케이스가 있습니다.
                           // 지금 이런 케이스가 그런 케이스구요
                           behavior: HitTestBehavior.opaque,
-                          onTap: onTapSearchField,
+                          // onTap: onTapSearchField,
+                          onTap: () => onAction(HomeAction.onTapSearchField()),
                           // 자 이렇게 탭을 찍어도 확인이 안되는 이유는 안쪽에 있는 텍스트 필드가
                           // 이벤트를 소비를 하기 때문에 그렇거든요
                           // 그거를 무시하는 방법은 얘를 감쌉니다.
@@ -117,7 +122,8 @@ class HomeScreen extends StatelessWidget {
               child: RecipeCategorySelector(
                 categories: state.categories,
                 selectedCategory: state.selectedCategory,
-                onSelectCategory: onSelectCategory,
+                // onSelectCategory: onSelectCategory,
+                onSelectCategory: (category) => onAction(HomeAction.onSelectCategory(category)),
               ),
             ),
             const SizedBox(height: 15),
