@@ -1,9 +1,18 @@
+import 'dart:async';
+
 import 'package:flutter_recipe_app_course/domain/repository/bookmark_repository.dart';
+import 'package:rxdart/rxdart.dart';
 
 class MockBookmarkRepositoryImpl implements BookmarkRepository {
   // Set
   // final _ids = <int>{2, 3, 4};
   final _ids = <int>{2, 3};
+  // final _controller = StreamController<Set<int>>.broadcast();
+  final _controller = BehaviorSubject<Set<int>>();
+
+  MockBookmarkRepositoryImpl() {
+    _controller.add(_ids);
+  }
 
   @override
   Future<List<int>> getBookmarkedIds() async {
@@ -13,16 +22,19 @@ class MockBookmarkRepositoryImpl implements BookmarkRepository {
   @override
   Future<void> save(int id) async {
     _ids.add(id);
+    _controller.add(_ids);
   }
 
   @override
   Future<void> unSave(int id) async {
     _ids.remove(id);
+    _controller.add(_ids);
   }
 
   @override
   Future<void> clear() async {
     _ids.clear();
+    _controller.add(_ids);
   }
 
   @override
@@ -32,5 +44,11 @@ class MockBookmarkRepositoryImpl implements BookmarkRepository {
     } else {
       await save(id);
     }
+    _controller.add(_ids);
+  }
+
+  @override
+  Stream<Set<int>> bookmarkIdsStream() {
+    return _controller.stream;
   }
 }

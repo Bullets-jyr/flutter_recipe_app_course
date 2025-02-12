@@ -21,13 +21,24 @@ class GetDishesByCategoryUseCase {
   //
   //   return recipes.where((e) => e.category == category).toList();
   // }
-  Future<List<Recipe>> execute(String category) async {
+  // Future<List<Recipe>> execute(String category) async {
+  //   final recipes = await _recipeRepository.getRecipes();
+  //   final ids = await _bookmarkRepository.getBookmarkedIds();
+  //
+  //   return recipes
+  //       .where((e) => category == 'All' || e.category == category)
+  //       .map((e) => e.copyWith(isFavorite: ids.contains(e.id)))
+  //       .toList();
+  // }
+  Stream<List<Recipe>> execute(String category) async* {
     final recipes = await _recipeRepository.getRecipes();
-    final ids = await _bookmarkRepository.getBookmarkedIds();
+    final filteredRecipes =
+    recipes.where((e) => category == 'All' || e.category == category);
 
-    return recipes
-        .where((e) => category == 'All' || e.category == category)
-        .map((e) => e.copyWith(isFavorite: ids.contains(e.id)))
-        .toList();
+    await for (final ids in _bookmarkRepository.bookmarkIdsStream()) {
+      yield filteredRecipes
+          .map((e) => e.copyWith(isFavorite: ids.contains(e.id)))
+          .toList();
+    }
   }
 }
