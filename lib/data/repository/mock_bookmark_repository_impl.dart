@@ -2,7 +2,8 @@ import 'package:flutter_recipe_app_course/domain/repository/bookmark_repository.
 
 class MockBookmarkRepositoryImpl implements BookmarkRepository {
   // Set
-  final _ids = <int>{2, 3, 4};
+  // final _ids = <int>{2, 3, 4};
+  final _ids = <int>{2, 3};
 
   @override
   Future<List<int>> getBookmarkedIds() async {

@@ -14,6 +14,7 @@ import 'package:flutter_recipe_app_course/domain/use_case/get_dishes_by_category
 import 'package:flutter_recipe_app_course/domain/use_case/get_new_recipes_use_case.dart';
 import 'package:flutter_recipe_app_course/domain/use_case/get_saved_recipes_use_case.dart';
 import 'package:flutter_recipe_app_course/domain/use_case/search_recipes_use_case.dart';
+import 'package:flutter_recipe_app_course/domain/use_case/toggle_bookmark_recipe_use_case.dart';
 import 'package:flutter_recipe_app_course/presentation/home/home_view_model.dart';
 import 'package:flutter_recipe_app_course/presentation/saved_recipes/saved_recipes_view_model.dart';
 import 'package:flutter_recipe_app_course/presentation/search/search_view_model.dart';
@@ -91,11 +92,18 @@ void diSetup() {
   getIt.registerSingleton(
     GetDishesByCategoryUseCase(
       recipeRepository: getIt(),
+      bookmarkRepository: getIt(),
     ),
   );
   getIt.registerSingleton(
     GetNewRecipesUseCase(
       recipeRepository: getIt(),
+    ),
+  );
+  getIt.registerSingleton(
+    ToggleBookmarkRecipeUseCase(
+      recipeRepository: getIt(),
+      bookmarkRepository: getIt(),
     ),
   );
 
@@ -115,10 +123,11 @@ void diSetup() {
     ),
   );
   getIt.registerFactory<HomeViewModel>(
-    () => HomeViewModel(
+        () => HomeViewModel(
       getCategoriesUseCase: getIt(),
       getDishesByCategoryUseCase: getIt(),
       getNewRecipesUseCase: getIt(),
+      toggleBookmarkRecipeUseCase: getIt(),
     ),
   );
 }

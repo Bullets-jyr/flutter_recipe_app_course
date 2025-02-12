@@ -20,18 +20,21 @@ mixin _$HomeAction {
   TResult when<TResult extends Object?>({
     required TResult Function() onTapSearchField,
     required TResult Function(String category) onSelectCategory,
+    required TResult Function(Recipe recipe) onTapFavorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? onTapSearchField,
     TResult? Function(String category)? onSelectCategory,
+    TResult? Function(Recipe recipe)? onTapFavorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? onTapSearchField,
     TResult Function(String category)? onSelectCategory,
+    TResult Function(Recipe recipe)? onTapFavorite,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$HomeAction {
   TResult map<TResult extends Object?>({
     required TResult Function(OnTapSearchField value) onTapSearchField,
     required TResult Function(OnSelectCategory value) onSelectCategory,
+    required TResult Function(OnTapFavorite value) onTapFavorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(OnTapSearchField value)? onTapSearchField,
     TResult? Function(OnSelectCategory value)? onSelectCategory,
+    TResult? Function(OnTapFavorite value)? onTapFavorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OnTapSearchField value)? onTapSearchField,
     TResult Function(OnSelectCategory value)? onSelectCategory,
+    TResult Function(OnTapFavorite value)? onTapFavorite,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -120,6 +126,7 @@ class _$OnTapSearchFieldImpl implements OnTapSearchField {
   TResult when<TResult extends Object?>({
     required TResult Function() onTapSearchField,
     required TResult Function(String category) onSelectCategory,
+    required TResult Function(Recipe recipe) onTapFavorite,
   }) {
     return onTapSearchField();
   }
@@ -129,6 +136,7 @@ class _$OnTapSearchFieldImpl implements OnTapSearchField {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? onTapSearchField,
     TResult? Function(String category)? onSelectCategory,
+    TResult? Function(Recipe recipe)? onTapFavorite,
   }) {
     return onTapSearchField?.call();
   }
@@ -138,6 +146,7 @@ class _$OnTapSearchFieldImpl implements OnTapSearchField {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? onTapSearchField,
     TResult Function(String category)? onSelectCategory,
+    TResult Function(Recipe recipe)? onTapFavorite,
     required TResult orElse(),
   }) {
     if (onTapSearchField != null) {
@@ -151,6 +160,7 @@ class _$OnTapSearchFieldImpl implements OnTapSearchField {
   TResult map<TResult extends Object?>({
     required TResult Function(OnTapSearchField value) onTapSearchField,
     required TResult Function(OnSelectCategory value) onSelectCategory,
+    required TResult Function(OnTapFavorite value) onTapFavorite,
   }) {
     return onTapSearchField(this);
   }
@@ -160,6 +170,7 @@ class _$OnTapSearchFieldImpl implements OnTapSearchField {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(OnTapSearchField value)? onTapSearchField,
     TResult? Function(OnSelectCategory value)? onSelectCategory,
+    TResult? Function(OnTapFavorite value)? onTapFavorite,
   }) {
     return onTapSearchField?.call(this);
   }
@@ -169,6 +180,7 @@ class _$OnTapSearchFieldImpl implements OnTapSearchField {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OnTapSearchField value)? onTapSearchField,
     TResult Function(OnSelectCategory value)? onSelectCategory,
+    TResult Function(OnTapFavorite value)? onTapFavorite,
     required TResult orElse(),
   }) {
     if (onTapSearchField != null) {
@@ -254,6 +266,7 @@ class _$OnSelectCategoryImpl implements OnSelectCategory {
   TResult when<TResult extends Object?>({
     required TResult Function() onTapSearchField,
     required TResult Function(String category) onSelectCategory,
+    required TResult Function(Recipe recipe) onTapFavorite,
   }) {
     return onSelectCategory(category);
   }
@@ -263,6 +276,7 @@ class _$OnSelectCategoryImpl implements OnSelectCategory {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? onTapSearchField,
     TResult? Function(String category)? onSelectCategory,
+    TResult? Function(Recipe recipe)? onTapFavorite,
   }) {
     return onSelectCategory?.call(category);
   }
@@ -272,6 +286,7 @@ class _$OnSelectCategoryImpl implements OnSelectCategory {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? onTapSearchField,
     TResult Function(String category)? onSelectCategory,
+    TResult Function(Recipe recipe)? onTapFavorite,
     required TResult orElse(),
   }) {
     if (onSelectCategory != null) {
@@ -285,6 +300,7 @@ class _$OnSelectCategoryImpl implements OnSelectCategory {
   TResult map<TResult extends Object?>({
     required TResult Function(OnTapSearchField value) onTapSearchField,
     required TResult Function(OnSelectCategory value) onSelectCategory,
+    required TResult Function(OnTapFavorite value) onTapFavorite,
   }) {
     return onSelectCategory(this);
   }
@@ -294,6 +310,7 @@ class _$OnSelectCategoryImpl implements OnSelectCategory {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(OnTapSearchField value)? onTapSearchField,
     TResult? Function(OnSelectCategory value)? onSelectCategory,
+    TResult? Function(OnTapFavorite value)? onTapFavorite,
   }) {
     return onSelectCategory?.call(this);
   }
@@ -303,6 +320,7 @@ class _$OnSelectCategoryImpl implements OnSelectCategory {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OnTapSearchField value)? onTapSearchField,
     TResult Function(OnSelectCategory value)? onSelectCategory,
+    TResult Function(OnTapFavorite value)? onTapFavorite,
     required TResult orElse(),
   }) {
     if (onSelectCategory != null) {
@@ -322,5 +340,163 @@ abstract class OnSelectCategory implements HomeAction {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OnSelectCategoryImplCopyWith<_$OnSelectCategoryImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OnTapFavoriteImplCopyWith<$Res> {
+  factory _$$OnTapFavoriteImplCopyWith(
+          _$OnTapFavoriteImpl value, $Res Function(_$OnTapFavoriteImpl) then) =
+      __$$OnTapFavoriteImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Recipe recipe});
+
+  $RecipeCopyWith<$Res> get recipe;
+}
+
+/// @nodoc
+class __$$OnTapFavoriteImplCopyWithImpl<$Res>
+    extends _$HomeActionCopyWithImpl<$Res, _$OnTapFavoriteImpl>
+    implements _$$OnTapFavoriteImplCopyWith<$Res> {
+  __$$OnTapFavoriteImplCopyWithImpl(
+      _$OnTapFavoriteImpl _value, $Res Function(_$OnTapFavoriteImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HomeAction
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? recipe = null,
+  }) {
+    return _then(_$OnTapFavoriteImpl(
+      null == recipe
+          ? _value.recipe
+          : recipe // ignore: cast_nullable_to_non_nullable
+              as Recipe,
+    ));
+  }
+
+  /// Create a copy of HomeAction
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $RecipeCopyWith<$Res> get recipe {
+    return $RecipeCopyWith<$Res>(_value.recipe, (value) {
+      return _then(_value.copyWith(recipe: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$OnTapFavoriteImpl implements OnTapFavorite {
+  const _$OnTapFavoriteImpl(this.recipe);
+
+  @override
+  final Recipe recipe;
+
+  @override
+  String toString() {
+    return 'HomeAction.onTapFavorite(recipe: $recipe)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnTapFavoriteImpl &&
+            (identical(other.recipe, recipe) || other.recipe == recipe));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, recipe);
+
+  /// Create a copy of HomeAction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnTapFavoriteImplCopyWith<_$OnTapFavoriteImpl> get copyWith =>
+      __$$OnTapFavoriteImplCopyWithImpl<_$OnTapFavoriteImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() onTapSearchField,
+    required TResult Function(String category) onSelectCategory,
+    required TResult Function(Recipe recipe) onTapFavorite,
+  }) {
+    return onTapFavorite(recipe);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? onTapSearchField,
+    TResult? Function(String category)? onSelectCategory,
+    TResult? Function(Recipe recipe)? onTapFavorite,
+  }) {
+    return onTapFavorite?.call(recipe);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? onTapSearchField,
+    TResult Function(String category)? onSelectCategory,
+    TResult Function(Recipe recipe)? onTapFavorite,
+    required TResult orElse(),
+  }) {
+    if (onTapFavorite != null) {
+      return onTapFavorite(recipe);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OnTapSearchField value) onTapSearchField,
+    required TResult Function(OnSelectCategory value) onSelectCategory,
+    required TResult Function(OnTapFavorite value) onTapFavorite,
+  }) {
+    return onTapFavorite(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(OnTapSearchField value)? onTapSearchField,
+    TResult? Function(OnSelectCategory value)? onSelectCategory,
+    TResult? Function(OnTapFavorite value)? onTapFavorite,
+  }) {
+    return onTapFavorite?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OnTapSearchField value)? onTapSearchField,
+    TResult Function(OnSelectCategory value)? onSelectCategory,
+    TResult Function(OnTapFavorite value)? onTapFavorite,
+    required TResult orElse(),
+  }) {
+    if (onTapFavorite != null) {
+      return onTapFavorite(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OnTapFavorite implements HomeAction {
+  const factory OnTapFavorite(final Recipe recipe) = _$OnTapFavoriteImpl;
+
+  Recipe get recipe;
+
+  /// Create a copy of HomeAction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$OnTapFavoriteImplCopyWith<_$OnTapFavoriteImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
