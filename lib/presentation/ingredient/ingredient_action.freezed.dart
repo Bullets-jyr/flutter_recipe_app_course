@@ -23,6 +23,9 @@ mixin _$IngredientAction {
     required TResult Function() onTapProcedure,
     required TResult Function(Recipe recipe) onTapFollow,
     required TResult Function(int recipeId) loadRecipe,
+    required TResult Function(String link) onTapShareMenu,
+    required TResult Function(Recipe recipe, int rate) onTapRateRecipe,
+    required TResult Function(Recipe recipe) onTapUnsave,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +35,9 @@ mixin _$IngredientAction {
     TResult? Function()? onTapProcedure,
     TResult? Function(Recipe recipe)? onTapFollow,
     TResult? Function(int recipeId)? loadRecipe,
+    TResult? Function(String link)? onTapShareMenu,
+    TResult? Function(Recipe recipe, int rate)? onTapRateRecipe,
+    TResult? Function(Recipe recipe)? onTapUnsave,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +47,9 @@ mixin _$IngredientAction {
     TResult Function()? onTapProcedure,
     TResult Function(Recipe recipe)? onTapFollow,
     TResult Function(int recipeId)? loadRecipe,
+    TResult Function(String link)? onTapShareMenu,
+    TResult Function(Recipe recipe, int rate)? onTapRateRecipe,
+    TResult Function(Recipe recipe)? onTapUnsave,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -51,6 +60,9 @@ mixin _$IngredientAction {
     required TResult Function(OnTapProcedure value) onTapProcedure,
     required TResult Function(OnTapFollow value) onTapFollow,
     required TResult Function(LoadRecipe value) loadRecipe,
+    required TResult Function(OnTapShareMenu value) onTapShareMenu,
+    required TResult Function(OnTapShareRateRecipe value) onTapRateRecipe,
+    required TResult Function(OnTapUnsave value) onTapUnsave,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +72,9 @@ mixin _$IngredientAction {
     TResult? Function(OnTapProcedure value)? onTapProcedure,
     TResult? Function(OnTapFollow value)? onTapFollow,
     TResult? Function(LoadRecipe value)? loadRecipe,
+    TResult? Function(OnTapShareMenu value)? onTapShareMenu,
+    TResult? Function(OnTapShareRateRecipe value)? onTapRateRecipe,
+    TResult? Function(OnTapUnsave value)? onTapUnsave,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,6 +84,9 @@ mixin _$IngredientAction {
     TResult Function(OnTapProcedure value)? onTapProcedure,
     TResult Function(OnTapFollow value)? onTapFollow,
     TResult Function(LoadRecipe value)? loadRecipe,
+    TResult Function(OnTapShareMenu value)? onTapShareMenu,
+    TResult Function(OnTapShareRateRecipe value)? onTapRateRecipe,
+    TResult Function(OnTapUnsave value)? onTapUnsave,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -180,6 +198,9 @@ class _$OnTapFavoriteImpl implements OnTapFavorite {
     required TResult Function() onTapProcedure,
     required TResult Function(Recipe recipe) onTapFollow,
     required TResult Function(int recipeId) loadRecipe,
+    required TResult Function(String link) onTapShareMenu,
+    required TResult Function(Recipe recipe, int rate) onTapRateRecipe,
+    required TResult Function(Recipe recipe) onTapUnsave,
   }) {
     return onTapFavorite(recipe);
   }
@@ -192,6 +213,9 @@ class _$OnTapFavoriteImpl implements OnTapFavorite {
     TResult? Function()? onTapProcedure,
     TResult? Function(Recipe recipe)? onTapFollow,
     TResult? Function(int recipeId)? loadRecipe,
+    TResult? Function(String link)? onTapShareMenu,
+    TResult? Function(Recipe recipe, int rate)? onTapRateRecipe,
+    TResult? Function(Recipe recipe)? onTapUnsave,
   }) {
     return onTapFavorite?.call(recipe);
   }
@@ -204,6 +228,9 @@ class _$OnTapFavoriteImpl implements OnTapFavorite {
     TResult Function()? onTapProcedure,
     TResult Function(Recipe recipe)? onTapFollow,
     TResult Function(int recipeId)? loadRecipe,
+    TResult Function(String link)? onTapShareMenu,
+    TResult Function(Recipe recipe, int rate)? onTapRateRecipe,
+    TResult Function(Recipe recipe)? onTapUnsave,
     required TResult orElse(),
   }) {
     if (onTapFavorite != null) {
@@ -220,6 +247,9 @@ class _$OnTapFavoriteImpl implements OnTapFavorite {
     required TResult Function(OnTapProcedure value) onTapProcedure,
     required TResult Function(OnTapFollow value) onTapFollow,
     required TResult Function(LoadRecipe value) loadRecipe,
+    required TResult Function(OnTapShareMenu value) onTapShareMenu,
+    required TResult Function(OnTapShareRateRecipe value) onTapRateRecipe,
+    required TResult Function(OnTapUnsave value) onTapUnsave,
   }) {
     return onTapFavorite(this);
   }
@@ -232,6 +262,9 @@ class _$OnTapFavoriteImpl implements OnTapFavorite {
     TResult? Function(OnTapProcedure value)? onTapProcedure,
     TResult? Function(OnTapFollow value)? onTapFollow,
     TResult? Function(LoadRecipe value)? loadRecipe,
+    TResult? Function(OnTapShareMenu value)? onTapShareMenu,
+    TResult? Function(OnTapShareRateRecipe value)? onTapRateRecipe,
+    TResult? Function(OnTapUnsave value)? onTapUnsave,
   }) {
     return onTapFavorite?.call(this);
   }
@@ -244,6 +277,9 @@ class _$OnTapFavoriteImpl implements OnTapFavorite {
     TResult Function(OnTapProcedure value)? onTapProcedure,
     TResult Function(OnTapFollow value)? onTapFollow,
     TResult Function(LoadRecipe value)? loadRecipe,
+    TResult Function(OnTapShareMenu value)? onTapShareMenu,
+    TResult Function(OnTapShareRateRecipe value)? onTapRateRecipe,
+    TResult Function(OnTapUnsave value)? onTapUnsave,
     required TResult orElse(),
   }) {
     if (onTapFavorite != null) {
@@ -311,6 +347,9 @@ class _$OnTapIngredientImpl implements OnTapIngredient {
     required TResult Function() onTapProcedure,
     required TResult Function(Recipe recipe) onTapFollow,
     required TResult Function(int recipeId) loadRecipe,
+    required TResult Function(String link) onTapShareMenu,
+    required TResult Function(Recipe recipe, int rate) onTapRateRecipe,
+    required TResult Function(Recipe recipe) onTapUnsave,
   }) {
     return onTapIngredient();
   }
@@ -323,6 +362,9 @@ class _$OnTapIngredientImpl implements OnTapIngredient {
     TResult? Function()? onTapProcedure,
     TResult? Function(Recipe recipe)? onTapFollow,
     TResult? Function(int recipeId)? loadRecipe,
+    TResult? Function(String link)? onTapShareMenu,
+    TResult? Function(Recipe recipe, int rate)? onTapRateRecipe,
+    TResult? Function(Recipe recipe)? onTapUnsave,
   }) {
     return onTapIngredient?.call();
   }
@@ -335,6 +377,9 @@ class _$OnTapIngredientImpl implements OnTapIngredient {
     TResult Function()? onTapProcedure,
     TResult Function(Recipe recipe)? onTapFollow,
     TResult Function(int recipeId)? loadRecipe,
+    TResult Function(String link)? onTapShareMenu,
+    TResult Function(Recipe recipe, int rate)? onTapRateRecipe,
+    TResult Function(Recipe recipe)? onTapUnsave,
     required TResult orElse(),
   }) {
     if (onTapIngredient != null) {
@@ -351,6 +396,9 @@ class _$OnTapIngredientImpl implements OnTapIngredient {
     required TResult Function(OnTapProcedure value) onTapProcedure,
     required TResult Function(OnTapFollow value) onTapFollow,
     required TResult Function(LoadRecipe value) loadRecipe,
+    required TResult Function(OnTapShareMenu value) onTapShareMenu,
+    required TResult Function(OnTapShareRateRecipe value) onTapRateRecipe,
+    required TResult Function(OnTapUnsave value) onTapUnsave,
   }) {
     return onTapIngredient(this);
   }
@@ -363,6 +411,9 @@ class _$OnTapIngredientImpl implements OnTapIngredient {
     TResult? Function(OnTapProcedure value)? onTapProcedure,
     TResult? Function(OnTapFollow value)? onTapFollow,
     TResult? Function(LoadRecipe value)? loadRecipe,
+    TResult? Function(OnTapShareMenu value)? onTapShareMenu,
+    TResult? Function(OnTapShareRateRecipe value)? onTapRateRecipe,
+    TResult? Function(OnTapUnsave value)? onTapUnsave,
   }) {
     return onTapIngredient?.call(this);
   }
@@ -375,6 +426,9 @@ class _$OnTapIngredientImpl implements OnTapIngredient {
     TResult Function(OnTapProcedure value)? onTapProcedure,
     TResult Function(OnTapFollow value)? onTapFollow,
     TResult Function(LoadRecipe value)? loadRecipe,
+    TResult Function(OnTapShareMenu value)? onTapShareMenu,
+    TResult Function(OnTapShareRateRecipe value)? onTapRateRecipe,
+    TResult Function(OnTapUnsave value)? onTapUnsave,
     required TResult orElse(),
   }) {
     if (onTapIngredient != null) {
@@ -434,6 +488,9 @@ class _$OnTapProcedureImpl implements OnTapProcedure {
     required TResult Function() onTapProcedure,
     required TResult Function(Recipe recipe) onTapFollow,
     required TResult Function(int recipeId) loadRecipe,
+    required TResult Function(String link) onTapShareMenu,
+    required TResult Function(Recipe recipe, int rate) onTapRateRecipe,
+    required TResult Function(Recipe recipe) onTapUnsave,
   }) {
     return onTapProcedure();
   }
@@ -446,6 +503,9 @@ class _$OnTapProcedureImpl implements OnTapProcedure {
     TResult? Function()? onTapProcedure,
     TResult? Function(Recipe recipe)? onTapFollow,
     TResult? Function(int recipeId)? loadRecipe,
+    TResult? Function(String link)? onTapShareMenu,
+    TResult? Function(Recipe recipe, int rate)? onTapRateRecipe,
+    TResult? Function(Recipe recipe)? onTapUnsave,
   }) {
     return onTapProcedure?.call();
   }
@@ -458,6 +518,9 @@ class _$OnTapProcedureImpl implements OnTapProcedure {
     TResult Function()? onTapProcedure,
     TResult Function(Recipe recipe)? onTapFollow,
     TResult Function(int recipeId)? loadRecipe,
+    TResult Function(String link)? onTapShareMenu,
+    TResult Function(Recipe recipe, int rate)? onTapRateRecipe,
+    TResult Function(Recipe recipe)? onTapUnsave,
     required TResult orElse(),
   }) {
     if (onTapProcedure != null) {
@@ -474,6 +537,9 @@ class _$OnTapProcedureImpl implements OnTapProcedure {
     required TResult Function(OnTapProcedure value) onTapProcedure,
     required TResult Function(OnTapFollow value) onTapFollow,
     required TResult Function(LoadRecipe value) loadRecipe,
+    required TResult Function(OnTapShareMenu value) onTapShareMenu,
+    required TResult Function(OnTapShareRateRecipe value) onTapRateRecipe,
+    required TResult Function(OnTapUnsave value) onTapUnsave,
   }) {
     return onTapProcedure(this);
   }
@@ -486,6 +552,9 @@ class _$OnTapProcedureImpl implements OnTapProcedure {
     TResult? Function(OnTapProcedure value)? onTapProcedure,
     TResult? Function(OnTapFollow value)? onTapFollow,
     TResult? Function(LoadRecipe value)? loadRecipe,
+    TResult? Function(OnTapShareMenu value)? onTapShareMenu,
+    TResult? Function(OnTapShareRateRecipe value)? onTapRateRecipe,
+    TResult? Function(OnTapUnsave value)? onTapUnsave,
   }) {
     return onTapProcedure?.call(this);
   }
@@ -498,6 +567,9 @@ class _$OnTapProcedureImpl implements OnTapProcedure {
     TResult Function(OnTapProcedure value)? onTapProcedure,
     TResult Function(OnTapFollow value)? onTapFollow,
     TResult Function(LoadRecipe value)? loadRecipe,
+    TResult Function(OnTapShareMenu value)? onTapShareMenu,
+    TResult Function(OnTapShareRateRecipe value)? onTapRateRecipe,
+    TResult Function(OnTapUnsave value)? onTapUnsave,
     required TResult orElse(),
   }) {
     if (onTapProcedure != null) {
@@ -596,6 +668,9 @@ class _$OnTapFollowImpl implements OnTapFollow {
     required TResult Function() onTapProcedure,
     required TResult Function(Recipe recipe) onTapFollow,
     required TResult Function(int recipeId) loadRecipe,
+    required TResult Function(String link) onTapShareMenu,
+    required TResult Function(Recipe recipe, int rate) onTapRateRecipe,
+    required TResult Function(Recipe recipe) onTapUnsave,
   }) {
     return onTapFollow(recipe);
   }
@@ -608,6 +683,9 @@ class _$OnTapFollowImpl implements OnTapFollow {
     TResult? Function()? onTapProcedure,
     TResult? Function(Recipe recipe)? onTapFollow,
     TResult? Function(int recipeId)? loadRecipe,
+    TResult? Function(String link)? onTapShareMenu,
+    TResult? Function(Recipe recipe, int rate)? onTapRateRecipe,
+    TResult? Function(Recipe recipe)? onTapUnsave,
   }) {
     return onTapFollow?.call(recipe);
   }
@@ -620,6 +698,9 @@ class _$OnTapFollowImpl implements OnTapFollow {
     TResult Function()? onTapProcedure,
     TResult Function(Recipe recipe)? onTapFollow,
     TResult Function(int recipeId)? loadRecipe,
+    TResult Function(String link)? onTapShareMenu,
+    TResult Function(Recipe recipe, int rate)? onTapRateRecipe,
+    TResult Function(Recipe recipe)? onTapUnsave,
     required TResult orElse(),
   }) {
     if (onTapFollow != null) {
@@ -636,6 +717,9 @@ class _$OnTapFollowImpl implements OnTapFollow {
     required TResult Function(OnTapProcedure value) onTapProcedure,
     required TResult Function(OnTapFollow value) onTapFollow,
     required TResult Function(LoadRecipe value) loadRecipe,
+    required TResult Function(OnTapShareMenu value) onTapShareMenu,
+    required TResult Function(OnTapShareRateRecipe value) onTapRateRecipe,
+    required TResult Function(OnTapUnsave value) onTapUnsave,
   }) {
     return onTapFollow(this);
   }
@@ -648,6 +732,9 @@ class _$OnTapFollowImpl implements OnTapFollow {
     TResult? Function(OnTapProcedure value)? onTapProcedure,
     TResult? Function(OnTapFollow value)? onTapFollow,
     TResult? Function(LoadRecipe value)? loadRecipe,
+    TResult? Function(OnTapShareMenu value)? onTapShareMenu,
+    TResult? Function(OnTapShareRateRecipe value)? onTapRateRecipe,
+    TResult? Function(OnTapUnsave value)? onTapUnsave,
   }) {
     return onTapFollow?.call(this);
   }
@@ -660,6 +747,9 @@ class _$OnTapFollowImpl implements OnTapFollow {
     TResult Function(OnTapProcedure value)? onTapProcedure,
     TResult Function(OnTapFollow value)? onTapFollow,
     TResult Function(LoadRecipe value)? loadRecipe,
+    TResult Function(OnTapShareMenu value)? onTapShareMenu,
+    TResult Function(OnTapShareRateRecipe value)? onTapRateRecipe,
+    TResult Function(OnTapUnsave value)? onTapUnsave,
     required TResult orElse(),
   }) {
     if (onTapFollow != null) {
@@ -755,6 +845,9 @@ class _$LoadRecipeImpl implements LoadRecipe {
     required TResult Function() onTapProcedure,
     required TResult Function(Recipe recipe) onTapFollow,
     required TResult Function(int recipeId) loadRecipe,
+    required TResult Function(String link) onTapShareMenu,
+    required TResult Function(Recipe recipe, int rate) onTapRateRecipe,
+    required TResult Function(Recipe recipe) onTapUnsave,
   }) {
     return loadRecipe(recipeId);
   }
@@ -767,6 +860,9 @@ class _$LoadRecipeImpl implements LoadRecipe {
     TResult? Function()? onTapProcedure,
     TResult? Function(Recipe recipe)? onTapFollow,
     TResult? Function(int recipeId)? loadRecipe,
+    TResult? Function(String link)? onTapShareMenu,
+    TResult? Function(Recipe recipe, int rate)? onTapRateRecipe,
+    TResult? Function(Recipe recipe)? onTapUnsave,
   }) {
     return loadRecipe?.call(recipeId);
   }
@@ -779,6 +875,9 @@ class _$LoadRecipeImpl implements LoadRecipe {
     TResult Function()? onTapProcedure,
     TResult Function(Recipe recipe)? onTapFollow,
     TResult Function(int recipeId)? loadRecipe,
+    TResult Function(String link)? onTapShareMenu,
+    TResult Function(Recipe recipe, int rate)? onTapRateRecipe,
+    TResult Function(Recipe recipe)? onTapUnsave,
     required TResult orElse(),
   }) {
     if (loadRecipe != null) {
@@ -795,6 +894,9 @@ class _$LoadRecipeImpl implements LoadRecipe {
     required TResult Function(OnTapProcedure value) onTapProcedure,
     required TResult Function(OnTapFollow value) onTapFollow,
     required TResult Function(LoadRecipe value) loadRecipe,
+    required TResult Function(OnTapShareMenu value) onTapShareMenu,
+    required TResult Function(OnTapShareRateRecipe value) onTapRateRecipe,
+    required TResult Function(OnTapUnsave value) onTapUnsave,
   }) {
     return loadRecipe(this);
   }
@@ -807,6 +909,9 @@ class _$LoadRecipeImpl implements LoadRecipe {
     TResult? Function(OnTapProcedure value)? onTapProcedure,
     TResult? Function(OnTapFollow value)? onTapFollow,
     TResult? Function(LoadRecipe value)? loadRecipe,
+    TResult? Function(OnTapShareMenu value)? onTapShareMenu,
+    TResult? Function(OnTapShareRateRecipe value)? onTapRateRecipe,
+    TResult? Function(OnTapUnsave value)? onTapUnsave,
   }) {
     return loadRecipe?.call(this);
   }
@@ -819,6 +924,9 @@ class _$LoadRecipeImpl implements LoadRecipe {
     TResult Function(OnTapProcedure value)? onTapProcedure,
     TResult Function(OnTapFollow value)? onTapFollow,
     TResult Function(LoadRecipe value)? loadRecipe,
+    TResult Function(OnTapShareMenu value)? onTapShareMenu,
+    TResult Function(OnTapShareRateRecipe value)? onTapRateRecipe,
+    TResult Function(OnTapUnsave value)? onTapUnsave,
     required TResult orElse(),
   }) {
     if (loadRecipe != null) {
@@ -837,5 +945,570 @@ abstract class LoadRecipe implements IngredientAction {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LoadRecipeImplCopyWith<_$LoadRecipeImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OnTapShareMenuImplCopyWith<$Res> {
+  factory _$$OnTapShareMenuImplCopyWith(_$OnTapShareMenuImpl value,
+          $Res Function(_$OnTapShareMenuImpl) then) =
+      __$$OnTapShareMenuImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String link});
+}
+
+/// @nodoc
+class __$$OnTapShareMenuImplCopyWithImpl<$Res>
+    extends _$IngredientActionCopyWithImpl<$Res, _$OnTapShareMenuImpl>
+    implements _$$OnTapShareMenuImplCopyWith<$Res> {
+  __$$OnTapShareMenuImplCopyWithImpl(
+      _$OnTapShareMenuImpl _value, $Res Function(_$OnTapShareMenuImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of IngredientAction
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? link = null,
+  }) {
+    return _then(_$OnTapShareMenuImpl(
+      null == link
+          ? _value.link
+          : link // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$OnTapShareMenuImpl implements OnTapShareMenu {
+  const _$OnTapShareMenuImpl(this.link);
+
+  @override
+  final String link;
+
+  @override
+  String toString() {
+    return 'IngredientAction.onTapShareMenu(link: $link)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnTapShareMenuImpl &&
+            (identical(other.link, link) || other.link == link));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, link);
+
+  /// Create a copy of IngredientAction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnTapShareMenuImplCopyWith<_$OnTapShareMenuImpl> get copyWith =>
+      __$$OnTapShareMenuImplCopyWithImpl<_$OnTapShareMenuImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Recipe recipe) onTapFavorite,
+    required TResult Function() onTapIngredient,
+    required TResult Function() onTapProcedure,
+    required TResult Function(Recipe recipe) onTapFollow,
+    required TResult Function(int recipeId) loadRecipe,
+    required TResult Function(String link) onTapShareMenu,
+    required TResult Function(Recipe recipe, int rate) onTapRateRecipe,
+    required TResult Function(Recipe recipe) onTapUnsave,
+  }) {
+    return onTapShareMenu(link);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Recipe recipe)? onTapFavorite,
+    TResult? Function()? onTapIngredient,
+    TResult? Function()? onTapProcedure,
+    TResult? Function(Recipe recipe)? onTapFollow,
+    TResult? Function(int recipeId)? loadRecipe,
+    TResult? Function(String link)? onTapShareMenu,
+    TResult? Function(Recipe recipe, int rate)? onTapRateRecipe,
+    TResult? Function(Recipe recipe)? onTapUnsave,
+  }) {
+    return onTapShareMenu?.call(link);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Recipe recipe)? onTapFavorite,
+    TResult Function()? onTapIngredient,
+    TResult Function()? onTapProcedure,
+    TResult Function(Recipe recipe)? onTapFollow,
+    TResult Function(int recipeId)? loadRecipe,
+    TResult Function(String link)? onTapShareMenu,
+    TResult Function(Recipe recipe, int rate)? onTapRateRecipe,
+    TResult Function(Recipe recipe)? onTapUnsave,
+    required TResult orElse(),
+  }) {
+    if (onTapShareMenu != null) {
+      return onTapShareMenu(link);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OnTapFavorite value) onTapFavorite,
+    required TResult Function(OnTapIngredient value) onTapIngredient,
+    required TResult Function(OnTapProcedure value) onTapProcedure,
+    required TResult Function(OnTapFollow value) onTapFollow,
+    required TResult Function(LoadRecipe value) loadRecipe,
+    required TResult Function(OnTapShareMenu value) onTapShareMenu,
+    required TResult Function(OnTapShareRateRecipe value) onTapRateRecipe,
+    required TResult Function(OnTapUnsave value) onTapUnsave,
+  }) {
+    return onTapShareMenu(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(OnTapFavorite value)? onTapFavorite,
+    TResult? Function(OnTapIngredient value)? onTapIngredient,
+    TResult? Function(OnTapProcedure value)? onTapProcedure,
+    TResult? Function(OnTapFollow value)? onTapFollow,
+    TResult? Function(LoadRecipe value)? loadRecipe,
+    TResult? Function(OnTapShareMenu value)? onTapShareMenu,
+    TResult? Function(OnTapShareRateRecipe value)? onTapRateRecipe,
+    TResult? Function(OnTapUnsave value)? onTapUnsave,
+  }) {
+    return onTapShareMenu?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OnTapFavorite value)? onTapFavorite,
+    TResult Function(OnTapIngredient value)? onTapIngredient,
+    TResult Function(OnTapProcedure value)? onTapProcedure,
+    TResult Function(OnTapFollow value)? onTapFollow,
+    TResult Function(LoadRecipe value)? loadRecipe,
+    TResult Function(OnTapShareMenu value)? onTapShareMenu,
+    TResult Function(OnTapShareRateRecipe value)? onTapRateRecipe,
+    TResult Function(OnTapUnsave value)? onTapUnsave,
+    required TResult orElse(),
+  }) {
+    if (onTapShareMenu != null) {
+      return onTapShareMenu(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OnTapShareMenu implements IngredientAction {
+  const factory OnTapShareMenu(final String link) = _$OnTapShareMenuImpl;
+
+  String get link;
+
+  /// Create a copy of IngredientAction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$OnTapShareMenuImplCopyWith<_$OnTapShareMenuImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OnTapShareRateRecipeImplCopyWith<$Res> {
+  factory _$$OnTapShareRateRecipeImplCopyWith(_$OnTapShareRateRecipeImpl value,
+          $Res Function(_$OnTapShareRateRecipeImpl) then) =
+      __$$OnTapShareRateRecipeImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Recipe recipe, int rate});
+
+  $RecipeCopyWith<$Res> get recipe;
+}
+
+/// @nodoc
+class __$$OnTapShareRateRecipeImplCopyWithImpl<$Res>
+    extends _$IngredientActionCopyWithImpl<$Res, _$OnTapShareRateRecipeImpl>
+    implements _$$OnTapShareRateRecipeImplCopyWith<$Res> {
+  __$$OnTapShareRateRecipeImplCopyWithImpl(_$OnTapShareRateRecipeImpl _value,
+      $Res Function(_$OnTapShareRateRecipeImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of IngredientAction
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? recipe = null,
+    Object? rate = null,
+  }) {
+    return _then(_$OnTapShareRateRecipeImpl(
+      null == recipe
+          ? _value.recipe
+          : recipe // ignore: cast_nullable_to_non_nullable
+              as Recipe,
+      null == rate
+          ? _value.rate
+          : rate // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+
+  /// Create a copy of IngredientAction
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $RecipeCopyWith<$Res> get recipe {
+    return $RecipeCopyWith<$Res>(_value.recipe, (value) {
+      return _then(_value.copyWith(recipe: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$OnTapShareRateRecipeImpl implements OnTapShareRateRecipe {
+  const _$OnTapShareRateRecipeImpl(this.recipe, this.rate);
+
+  @override
+  final Recipe recipe;
+  @override
+  final int rate;
+
+  @override
+  String toString() {
+    return 'IngredientAction.onTapRateRecipe(recipe: $recipe, rate: $rate)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnTapShareRateRecipeImpl &&
+            (identical(other.recipe, recipe) || other.recipe == recipe) &&
+            (identical(other.rate, rate) || other.rate == rate));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, recipe, rate);
+
+  /// Create a copy of IngredientAction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnTapShareRateRecipeImplCopyWith<_$OnTapShareRateRecipeImpl>
+      get copyWith =>
+          __$$OnTapShareRateRecipeImplCopyWithImpl<_$OnTapShareRateRecipeImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Recipe recipe) onTapFavorite,
+    required TResult Function() onTapIngredient,
+    required TResult Function() onTapProcedure,
+    required TResult Function(Recipe recipe) onTapFollow,
+    required TResult Function(int recipeId) loadRecipe,
+    required TResult Function(String link) onTapShareMenu,
+    required TResult Function(Recipe recipe, int rate) onTapRateRecipe,
+    required TResult Function(Recipe recipe) onTapUnsave,
+  }) {
+    return onTapRateRecipe(recipe, rate);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Recipe recipe)? onTapFavorite,
+    TResult? Function()? onTapIngredient,
+    TResult? Function()? onTapProcedure,
+    TResult? Function(Recipe recipe)? onTapFollow,
+    TResult? Function(int recipeId)? loadRecipe,
+    TResult? Function(String link)? onTapShareMenu,
+    TResult? Function(Recipe recipe, int rate)? onTapRateRecipe,
+    TResult? Function(Recipe recipe)? onTapUnsave,
+  }) {
+    return onTapRateRecipe?.call(recipe, rate);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Recipe recipe)? onTapFavorite,
+    TResult Function()? onTapIngredient,
+    TResult Function()? onTapProcedure,
+    TResult Function(Recipe recipe)? onTapFollow,
+    TResult Function(int recipeId)? loadRecipe,
+    TResult Function(String link)? onTapShareMenu,
+    TResult Function(Recipe recipe, int rate)? onTapRateRecipe,
+    TResult Function(Recipe recipe)? onTapUnsave,
+    required TResult orElse(),
+  }) {
+    if (onTapRateRecipe != null) {
+      return onTapRateRecipe(recipe, rate);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OnTapFavorite value) onTapFavorite,
+    required TResult Function(OnTapIngredient value) onTapIngredient,
+    required TResult Function(OnTapProcedure value) onTapProcedure,
+    required TResult Function(OnTapFollow value) onTapFollow,
+    required TResult Function(LoadRecipe value) loadRecipe,
+    required TResult Function(OnTapShareMenu value) onTapShareMenu,
+    required TResult Function(OnTapShareRateRecipe value) onTapRateRecipe,
+    required TResult Function(OnTapUnsave value) onTapUnsave,
+  }) {
+    return onTapRateRecipe(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(OnTapFavorite value)? onTapFavorite,
+    TResult? Function(OnTapIngredient value)? onTapIngredient,
+    TResult? Function(OnTapProcedure value)? onTapProcedure,
+    TResult? Function(OnTapFollow value)? onTapFollow,
+    TResult? Function(LoadRecipe value)? loadRecipe,
+    TResult? Function(OnTapShareMenu value)? onTapShareMenu,
+    TResult? Function(OnTapShareRateRecipe value)? onTapRateRecipe,
+    TResult? Function(OnTapUnsave value)? onTapUnsave,
+  }) {
+    return onTapRateRecipe?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OnTapFavorite value)? onTapFavorite,
+    TResult Function(OnTapIngredient value)? onTapIngredient,
+    TResult Function(OnTapProcedure value)? onTapProcedure,
+    TResult Function(OnTapFollow value)? onTapFollow,
+    TResult Function(LoadRecipe value)? loadRecipe,
+    TResult Function(OnTapShareMenu value)? onTapShareMenu,
+    TResult Function(OnTapShareRateRecipe value)? onTapRateRecipe,
+    TResult Function(OnTapUnsave value)? onTapUnsave,
+    required TResult orElse(),
+  }) {
+    if (onTapRateRecipe != null) {
+      return onTapRateRecipe(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OnTapShareRateRecipe implements IngredientAction {
+  const factory OnTapShareRateRecipe(final Recipe recipe, final int rate) =
+      _$OnTapShareRateRecipeImpl;
+
+  Recipe get recipe;
+  int get rate;
+
+  /// Create a copy of IngredientAction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$OnTapShareRateRecipeImplCopyWith<_$OnTapShareRateRecipeImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OnTapUnsaveImplCopyWith<$Res> {
+  factory _$$OnTapUnsaveImplCopyWith(
+          _$OnTapUnsaveImpl value, $Res Function(_$OnTapUnsaveImpl) then) =
+      __$$OnTapUnsaveImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Recipe recipe});
+
+  $RecipeCopyWith<$Res> get recipe;
+}
+
+/// @nodoc
+class __$$OnTapUnsaveImplCopyWithImpl<$Res>
+    extends _$IngredientActionCopyWithImpl<$Res, _$OnTapUnsaveImpl>
+    implements _$$OnTapUnsaveImplCopyWith<$Res> {
+  __$$OnTapUnsaveImplCopyWithImpl(
+      _$OnTapUnsaveImpl _value, $Res Function(_$OnTapUnsaveImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of IngredientAction
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? recipe = null,
+  }) {
+    return _then(_$OnTapUnsaveImpl(
+      null == recipe
+          ? _value.recipe
+          : recipe // ignore: cast_nullable_to_non_nullable
+              as Recipe,
+    ));
+  }
+
+  /// Create a copy of IngredientAction
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $RecipeCopyWith<$Res> get recipe {
+    return $RecipeCopyWith<$Res>(_value.recipe, (value) {
+      return _then(_value.copyWith(recipe: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$OnTapUnsaveImpl implements OnTapUnsave {
+  const _$OnTapUnsaveImpl(this.recipe);
+
+  @override
+  final Recipe recipe;
+
+  @override
+  String toString() {
+    return 'IngredientAction.onTapUnsave(recipe: $recipe)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnTapUnsaveImpl &&
+            (identical(other.recipe, recipe) || other.recipe == recipe));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, recipe);
+
+  /// Create a copy of IngredientAction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnTapUnsaveImplCopyWith<_$OnTapUnsaveImpl> get copyWith =>
+      __$$OnTapUnsaveImplCopyWithImpl<_$OnTapUnsaveImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Recipe recipe) onTapFavorite,
+    required TResult Function() onTapIngredient,
+    required TResult Function() onTapProcedure,
+    required TResult Function(Recipe recipe) onTapFollow,
+    required TResult Function(int recipeId) loadRecipe,
+    required TResult Function(String link) onTapShareMenu,
+    required TResult Function(Recipe recipe, int rate) onTapRateRecipe,
+    required TResult Function(Recipe recipe) onTapUnsave,
+  }) {
+    return onTapUnsave(recipe);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Recipe recipe)? onTapFavorite,
+    TResult? Function()? onTapIngredient,
+    TResult? Function()? onTapProcedure,
+    TResult? Function(Recipe recipe)? onTapFollow,
+    TResult? Function(int recipeId)? loadRecipe,
+    TResult? Function(String link)? onTapShareMenu,
+    TResult? Function(Recipe recipe, int rate)? onTapRateRecipe,
+    TResult? Function(Recipe recipe)? onTapUnsave,
+  }) {
+    return onTapUnsave?.call(recipe);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Recipe recipe)? onTapFavorite,
+    TResult Function()? onTapIngredient,
+    TResult Function()? onTapProcedure,
+    TResult Function(Recipe recipe)? onTapFollow,
+    TResult Function(int recipeId)? loadRecipe,
+    TResult Function(String link)? onTapShareMenu,
+    TResult Function(Recipe recipe, int rate)? onTapRateRecipe,
+    TResult Function(Recipe recipe)? onTapUnsave,
+    required TResult orElse(),
+  }) {
+    if (onTapUnsave != null) {
+      return onTapUnsave(recipe);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OnTapFavorite value) onTapFavorite,
+    required TResult Function(OnTapIngredient value) onTapIngredient,
+    required TResult Function(OnTapProcedure value) onTapProcedure,
+    required TResult Function(OnTapFollow value) onTapFollow,
+    required TResult Function(LoadRecipe value) loadRecipe,
+    required TResult Function(OnTapShareMenu value) onTapShareMenu,
+    required TResult Function(OnTapShareRateRecipe value) onTapRateRecipe,
+    required TResult Function(OnTapUnsave value) onTapUnsave,
+  }) {
+    return onTapUnsave(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(OnTapFavorite value)? onTapFavorite,
+    TResult? Function(OnTapIngredient value)? onTapIngredient,
+    TResult? Function(OnTapProcedure value)? onTapProcedure,
+    TResult? Function(OnTapFollow value)? onTapFollow,
+    TResult? Function(LoadRecipe value)? loadRecipe,
+    TResult? Function(OnTapShareMenu value)? onTapShareMenu,
+    TResult? Function(OnTapShareRateRecipe value)? onTapRateRecipe,
+    TResult? Function(OnTapUnsave value)? onTapUnsave,
+  }) {
+    return onTapUnsave?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OnTapFavorite value)? onTapFavorite,
+    TResult Function(OnTapIngredient value)? onTapIngredient,
+    TResult Function(OnTapProcedure value)? onTapProcedure,
+    TResult Function(OnTapFollow value)? onTapFollow,
+    TResult Function(LoadRecipe value)? loadRecipe,
+    TResult Function(OnTapShareMenu value)? onTapShareMenu,
+    TResult Function(OnTapShareRateRecipe value)? onTapRateRecipe,
+    TResult Function(OnTapUnsave value)? onTapUnsave,
+    required TResult orElse(),
+  }) {
+    if (onTapUnsave != null) {
+      return onTapUnsave(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OnTapUnsave implements IngredientAction {
+  const factory OnTapUnsave(final Recipe recipe) = _$OnTapUnsaveImpl;
+
+  Recipe get recipe;
+
+  /// Create a copy of IngredientAction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$OnTapUnsaveImplCopyWith<_$OnTapUnsaveImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

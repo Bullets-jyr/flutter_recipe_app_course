@@ -5,14 +5,12 @@ import 'package:flutter_recipe_app_course/ui/text_styles.dart';
 
 class RatingDialog extends StatefulWidget {
   final String title;
-  final int score;
   final String actionName;
   final void Function(int score) onChange;
 
   const RatingDialog({
     super.key,
     required this.title,
-    required this.score,
     required this.actionName,
     required this.onChange,
   });
@@ -46,7 +44,7 @@ class _RatingDialogState extends State<RatingDialog> {
           widget.actionName,
           color: ColorStyles.rating,
           textStyle: TextStyles.smallerTextRegular,
-          onPressed: () {
+          onPressed: _value == 0 ? null : () {
             widget.onChange(_value);
           },
         ),
@@ -56,7 +54,6 @@ class _RatingDialogState extends State<RatingDialog> {
 }
 
 class RatingBar extends StatelessWidget {
-  // 1, 2, 3, 4, 5
   final int value;
   final void Function(int value) onChange;
 
@@ -72,15 +69,12 @@ class RatingBar extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: List.generate(
         5,
-        (index) {
+            (index) {
           return GestureDetector(
             onTapDown: (_) {
               onChange(index + 1);
             },
             child: Icon(
-              // value: 5
-              // index: 0, 1, 2, 3, 4, 5
-              // value -1: 4
               value - 1 >= index ? Icons.star : Icons.star_border_outlined,
               size: 30,
               color: ColorStyles.rating,
