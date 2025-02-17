@@ -40,6 +40,7 @@ class _RatingDialogState extends State<RatingDialog> {
         },
       ),
       actions: [
+        // Menu - Rate Dialog
         SmallButton(
           widget.actionName,
           color: ColorStyles.rating,
