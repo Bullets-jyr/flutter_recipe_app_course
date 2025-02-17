@@ -1,3 +1,4 @@
+import 'package:flutter_recipe_app_course/data/clipboard/default_clipboard_service.dart';
 import 'package:flutter_recipe_app_course/data/data_source/local/default_local_storage.dart';
 import 'package:flutter_recipe_app_course/data/data_source/remote/remote_recipe_data_source_impl.dart';
 import 'package:flutter_recipe_app_course/data/repository/error_mock_recipe_repository_impl.dart';
@@ -6,6 +7,7 @@ import 'package:flutter_recipe_app_course/data/repository/mock_ingredient_reposi
 import 'package:flutter_recipe_app_course/data/repository/mock_procedure_repository_impl.dart';
 import 'package:flutter_recipe_app_course/data/repository/mock_recent_search_recipe_repository_impl.dart';
 import 'package:flutter_recipe_app_course/data/repository/mock_recipe_repository_impl.dart';
+import 'package:flutter_recipe_app_course/domain/clipboard/clipboard_service.dart';
 import 'package:flutter_recipe_app_course/domain/data_source/local_storage.dart';
 import 'package:flutter_recipe_app_course/domain/data_source/recipe_data_source.dart';
 import 'package:flutter_recipe_app_course/domain/repository/bookmark_repository.dart';
@@ -72,6 +74,9 @@ void diSetup() {
   getIt.registerSingleton<ProcedureRepository>(
     MockProcedureRepositoryImpl(),
   );
+  getIt.registerSingleton<ClipboardService>(
+    DefaultClipboardService(),
+  );
 
   /// 2) SearchRoot
   getIt.registerSingleton<RecentSearchRecipeRepository>(
@@ -122,7 +127,7 @@ void diSetup() {
   /// ViewModel () =>
   /// 1) SavedRecipesRoot
   getIt.registerFactory<SavedRecipesViewModel>(
-        () => SavedRecipesViewModel(
+    () => SavedRecipesViewModel(
       getSavedRecipesUseCase: getIt(),
       toggleBookmarkRecipeUseCase: getIt(),
     ),
@@ -136,7 +141,7 @@ void diSetup() {
     ),
   );
   getIt.registerFactory<HomeViewModel>(
-        () => HomeViewModel(
+    () => HomeViewModel(
       getCategoriesUseCase: getIt(),
       getDishesByCategoryUseCase: getIt(),
       getNewRecipesUseCase: getIt(),
@@ -144,10 +149,11 @@ void diSetup() {
     ),
   );
   getIt.registerFactory<IngredientViewModel>(
-        () => IngredientViewModel(
+    () => IngredientViewModel(
       ingredientRepository: getIt(),
       procedureRepository: getIt(),
       getDishesByCategoryUseCase: getIt(),
+      clipboardService: getIt(),
     ),
   );
 }

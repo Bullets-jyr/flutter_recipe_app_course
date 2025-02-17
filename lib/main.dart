@@ -99,7 +99,7 @@ class MyHomePage extends StatelessWidget {
                 builder: (_) {
                   return RatingDialog(
                     title: 'Rate recipe',
-                    score: 3,
+                    // score: 3,
                     actionName: 'Send',
                     onChange: (score) {
                       print(score);
